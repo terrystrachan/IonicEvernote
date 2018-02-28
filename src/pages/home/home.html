@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Ionic Evernote
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <button ion-button primary block (tap)="authoriseEvernote()">Authorise Evernote</button>
+
+  <button ion-button primary block (tap)="getNotebooks()">Get Evernote Notebooks</button>
+
+  <ion-list *ngFor="let notebook of evernoteNotebooks">
+    <ion-item>
+      <h1>{{notebook?.name}}</h1>
+      <p>{{notebook?.guid}}</p>
+      <p>{{notebook?.stack}}</p>
+      <p>{{notebook?.defaultNotebook}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
